@@ -1,6 +1,7 @@
 import React, { useState} from "react";
 import styled from 'styled-components';
 import BurguerButton from "./BurguerButton";
+import Logowalleworld from '../imagenes/logo.png';
 
 
 function Navbar(){
@@ -13,7 +14,14 @@ function Navbar(){
     return(
         <>
             <NavbarContenedor> {/*ESTO ES PARA PONER ESTILOS GRACIAS A LA LIBRERIA QUE SE INSTALO STYLED COMPONENTS y se definio abajo*/}
-                <h2>Tacorago <span>Developers</span></h2>
+                <h2>   <div className='logow-contedor'>
+        <img 
+          className='logow'
+          src={Logowalleworld}
+          alt="logo de walleworld" />
+          
+       </div> <span></span></h2>
+                
                 <div className={`links ${clicked ? 'active':''}`}>{/* ESTO ES PARA QUE ACTIVE EL ESTILO LINK.ACTIVE Y MOSTRARA EN MEDIO EL MENU. Y ESTO SUCEDERA AL HACER CLICK EN EL MENU HAMBURGUESA. Y EL COMPNENTE ENCARGADO DE ELLO ES bURGUERBUTTON*/}
                     <a  href="#walleworld">Inicio</a>
                     <a  href="#Developer">Tienda</a>
@@ -48,6 +56,23 @@ const NavbarContenedor = styled.nav`
         font-weight:bold;
     } 
   }
+  .logow-contedor{
+    width: 52px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin: 1px;
+ 
+    left:0;
+  }
+
+  .logow{
+    
+    height: 50px;
+    width: 80px;
+}
+
+
     padding: .4rem;
     background-color:#333;
     display:flex;
